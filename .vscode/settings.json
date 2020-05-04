@@ -1,7 +1,24 @@
 {
-  "appService.zipIgnorePattern": [
-    "node_modules{,/**}"
-  ],
-  "appService.defaultWebAppToDeploy": "/subscriptions/cfd12dd7-4872-4b83-8cd8-2ed6083047d7/resourceGroups/appsvc_rg_linux_eastus/providers/Microsoft.Web/sites/papa-node-hello-01",
-  "appService.deploySubpath": ""
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#dd894d",
+    "activityBar.activeBorder": "#aff0ca",
+    "activityBar.background": "#dd894d",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#aff0ca",
+    "activityBarBadge.foreground": "#15202b",
+    "editorGroup.border": "#dd894d",
+    "panel.border": "#dd894d",
+    "sideBar.border": "#dd894d",
+    "statusBar.background": "#cf6d28",
+    "statusBar.border": "#cf6d28",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#a45620",
+    "titleBar.activeBackground": "#cf6d28",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.border": "#cf6d28",
+    "titleBar.inactiveBackground": "#cf6d2899",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#cf6d28"
 }
