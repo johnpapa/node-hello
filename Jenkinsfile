@@ -38,7 +38,7 @@ pipeline {
       
       stage('Deploy to staging') {
             when {
-               ${BRANCH_NAME} == 'staging'
+                branch 'staging' 
 	    }
             steps {
 
