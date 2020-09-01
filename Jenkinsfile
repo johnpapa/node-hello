@@ -5,7 +5,6 @@ pipeline {
    environment { 
 	   
 	DOCKER_IMAGE = 'nodejs/app'
-        
 	ECR_REPO = '007293158826.dkr.ecr.ap-southeast-1.amazonaws.com/nodejs'
 	APP_VERSION = 'unknown'
         APP_ENV = 'unknown'
