@@ -17,7 +17,7 @@ pipeline {
    }
 
    stages {
-      stage('[NODEJS] Checkout') {
+      /*stage('[NODEJS] Checkout') {
          steps {
             script {
                 checkout([
@@ -26,7 +26,7 @@ pipeline {
                 ])
             }
          }
-      }
+      }*/
 	   
       stage('[NODEJS] Build') {
          steps {
