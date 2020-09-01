@@ -31,18 +31,17 @@ pipeline {
       stage('[NODEJS] Build') {
          steps {
             echo '****** Build app ******'
-            sh '''
+            /*sh '''
             docker build -t ${DOCKER_IMAGE}:${BUILD_ID} .
             docker tag ${DOCKER_IMAGE}:${BUILD_ID} ${ECR_REPO}:${BUILD_ID}
-            '''
+            '''*/
          }
       }
       
       stage('[NODEJS] Push to ECR') {
          steps {
             echo '****** Push docker image to ECR ******'
-	    sh '''
-            
+	    /*sh '''
             export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
             export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
 	    export AWS_DEFAULT_REGION="ap-southeast-1"
@@ -52,7 +51,7 @@ pipeline {
             
             eval ${ECR_LOGIN_STRING}
             docker push ${ECR_REPO}:${BUILD_ID}
-            '''
+            '''*/
          }
       }
       
