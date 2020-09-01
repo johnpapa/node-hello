@@ -50,6 +50,7 @@ pipeline {
 	    }
             steps {
                 sh 'echo "Here is target branch ${GIT_BRANCH} "'
+		sh 'echo "Deploying release branch ${BRANCH_NAME}"'
             }
         }
       stage('[NODEJS] Deploy to production') {
