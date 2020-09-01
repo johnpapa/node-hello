@@ -10,7 +10,7 @@ pipeline {
 	ECR_REPO = '007293158826.dkr.ecr.ap-southeast-1.amazonaws.com/nodejs'
 	APP_VERSION = 'unknown'
         APP_ENV = 'unknown'
-        TASK_FAMILY='unknown'
+        TASK_FAMILY = 'unknown'
 	   
         AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
