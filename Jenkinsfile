@@ -54,7 +54,7 @@ pipeline {
                 branch 'staging' 
 	    }
             steps {
-		echo '****** Deploy to ${BRANCH_NAME} branch ******'
+		echo "****** Deploy to ${BRANCH_NAME} branch ******"
 		sh '''
 		TASK_DEFINITION=$(aws ecs describe-task-definition --task-definition "${STAGING_TASK}")
 		NEW_TASK_DEFINITION=$(echo $TASK_DEFINITION | jq --arg ECR_REPO "${ECR_REPO}:${APP_VERSION}" --arg APP_VERSION "${APP_VERSION}" --arg APP_ENV "${APP_ENV}" '.taskDefinition |.containerDefinitions[0].image = $ECR_REPO | .containerDefinitions[0].environment[0].value = $APP_VERSION |.containerDefinitions[0].environment[1].value = $APP_ENV  | del(.taskDefinitionArn) | del(.revision) | del(.status) | del(.requiresAttributes) | del(.compatibilities)')
