@@ -17,17 +17,7 @@ pipeline {
    }
 
    stages {
-      /*stage('[NODEJS] Checkout') {
-         steps {
-            script {
-                checkout([
-                    $class: 'GitSCM', branches: [[name: '*/staging']],
-                    userRemoteConfigs: [[url: 'https://github.com/canhnp/node-hello.git']]
-                ])
-            }
-         }
-      }*/
-	   
+
       stage('[NODEJS] Build') {
          steps {
             echo '****** Build app ******'
