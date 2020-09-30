@@ -1,6 +1,6 @@
 # Node Hello World
 
-Simple node.js app that servers "hello world"
+A simple node.js app that prints "hello world"
 
 Great for testing simple deployments to the cloud
 
