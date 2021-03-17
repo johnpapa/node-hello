@@ -1,5 +1,5 @@
 const http = require('http');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
@@ -8,5 +8,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}/`);
+  console.log(`Server running on http://10.0.9.132:${port}/`);
 });
