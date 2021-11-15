@@ -26,12 +26,7 @@ jobs:
       run: docker login -u="${{ secrets.DOCKERHUB_USERNAME }}" -p="${{ secrets.DOCKERHUB_PASSWORD }}"
     - name: Pushing Docker Image to DockerHub
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/myimage
-    - name: setting environment config
-      run: sudo mkdir ~/.kube
-           sudo cp /etc/kubernetes/admin.conf ~/.kube/
-           cd ~/.kube
-           sudo mv admin.conf config
-           sudo service kubelet restart
+
        
     - name: create deployement
       run: kubectl create -f deployment.yml
@@ -46,9 +41,4 @@ jobs:
     - name: describe all service objects deployed
       run: kubectl describe svc ngnix-svc
     - name: Download a Build Artifact
-  uses: actions/download-artifact@v2.0.10
-  with:
-    # Artifact name
-    name: assets-for-download
-    # Destination path
-    path: downloads
+ 
