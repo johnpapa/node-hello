@@ -26,3 +26,15 @@ jobs:
       run: docker login -u="${{ secrets.DOCKERHUB_USERNAME }}" -p="${{ secrets.DOCKERHUB_PASSWORD }}"
     - name: Pushing Docker Image to DockerHub
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/myimage
+    - name: create deployement
+      run: kubectl create -f deployment.yml
+    - name: check deployment information
+      run:  kubectl get deployment
+    - name: describe deployment 
+      run: kubctl describe deployment nginx-deployment 
+    - name: check the list of pods created
+      run: kubectl get pods -1 app=ngnix
+    - name: deploy service
+      run: kubctl get svc
+    - name: describe all service objects deployed
+      run: kubectl describe svc ngnix-svc
