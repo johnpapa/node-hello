@@ -41,11 +41,7 @@ jobs:
       #run: kubectl describe svc ngnix-svc
     - name: create dir
       run: mkdir downloads
-    - name: add artifacts
-      run: 
-        cd downloads
-         echo 'akanksha' > alpha.html
-         cd ..
+   
     - name: use the upload artifact
       uses: actions/upload-artifact@v2
       with:
