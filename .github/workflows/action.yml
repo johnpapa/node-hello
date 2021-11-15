@@ -28,12 +28,10 @@ jobs:
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/myimage
     - name: setting environment config
       run: sudo mkdir ~/.kube
-sudo cp /etc/kubernetes/admin.conf ~/.kube/
-
-cd ~/.kube
-
-sudo mv admin.conf config
-sudo service kubelet restart
+           sudo cp /etc/kubernetes/admin.conf ~/.kube/
+           cd ~/.kube
+           sudo mv admin.conf config
+           sudo service kubelet restart
        
     - name: create deployement
       run: kubectl create -f deployment.yml
@@ -47,3 +45,10 @@ sudo service kubelet restart
       run: kubctl get svc
     - name: describe all service objects deployed
       run: kubectl describe svc ngnix-svc
+    - name: Download a Build Artifact
+  uses: actions/download-artifact@v2.0.10
+  with:
+    # Artifact name
+    name: assets-for-download
+    # Destination path
+    path: downloads
