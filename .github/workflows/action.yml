@@ -27,17 +27,27 @@ jobs:
     - name: Pushing Docker Image to DockerHub
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/myimage
      
-    - name: create deployement
-      run: kubectl create -f deployment.yml
-    - name: check deployment information
-      run:  kubectl get deployment
-    - name: describe deployment 
-      run: kubctl describe deployment nginx-deployment 
-    - name: check the list of pods created
-      run: kubectl get pods -1 app=ngnix
-    - name: deploy service
-      run: kubctl get svc
-    - name: describe all service objects deployed
-      run: kubectl describe svc ngnix-svc
-    #- name: Download a Build Artifact
- 
+    #- name: create deployement
+     # run: kubectl create -f deployment.yml
+    #- name: check deployment information
+     # run:  kubectl get deployment
+    #- name: describe deployment 
+     # run: kubctl describe deployment nginx-deployment 
+    #- name: check the list of pods created
+     # run: kubectl get pods -1 app=ngnix
+    #- name: deploy service
+     # run: kubctl get svc
+    #- name: describe all service objects deployed
+      #run: kubectl describe svc ngnix-svc
+    - name: create dir
+      run: mkdir downloads
+    - name: add artifacts
+      run: 
+        cd downloads
+         echo 'akanksha' > alpha.html
+         cd ..
+    - name: use the upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: assests/upload-artifact@v2
+        path: downloads
