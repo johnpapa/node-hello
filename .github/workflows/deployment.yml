@@ -13,4 +13,4 @@ spec:
       - name: 1986895/myimage
         image: 1986895/myimage:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 80
