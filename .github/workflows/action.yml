@@ -28,6 +28,7 @@ jobs:
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/myimage
     - name: setting environment config
       run: export KUBECONFIG=/etc/kubernetes/admin.conf
+        run:cp /etc/kubernetes/admin.conf $HOME/
     - name: create deployement
       run: kubectl create -f deployment.yml
     - name: check deployment information
