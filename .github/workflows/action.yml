@@ -19,7 +19,7 @@ jobs:
     - name: Images present
       run: docker images
     - name: Running a Docker Image
-      run: docker run -p 8080:8080 -d ${{ secrets.DOCKERHUB_USERNAME }}/myimage
+      run: docker run -p 3000:3000 -d ${{ secrets.DOCKERHUB_USERNAME }}/myimage
     - name: Containers present
       run: docker ps -a
     - name: Login to DockerHub
