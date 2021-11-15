@@ -1,16 +1,16 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: 1986895/myimage
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: nginx
+        app: 1986895/myimage
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
+      - name: 1986895/myimage
+        image: 1986895/myimage:latest
         ports:
         - containerPort: 80
