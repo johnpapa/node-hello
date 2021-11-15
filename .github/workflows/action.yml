@@ -27,8 +27,14 @@ jobs:
     - name: Pushing Docker Image to DockerHub
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/myimage
     - name: setting environment config
-      run: export KUBECONFIG=/etc/kubernetes/admin.conf
-        run:cp /etc/kubernetes/admin.conf $HOME/
+      run: sudo mkdir ~/.kube
+sudo cp /etc/kubernetes/admin.conf ~/.kube/
+
+cd ~/.kube
+
+sudo mv admin.conf config
+sudo service kubelet restart
+       
     - name: create deployement
       run: kubectl create -f deployment.yml
     - name: check deployment information
