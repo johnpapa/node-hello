@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: HelloNode
-        image: thetips4you/nodeapp:latest
+        image: 1986895/myimage:latest
         ports:
         - containerPort: 3000
         
