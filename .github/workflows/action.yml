@@ -45,5 +45,5 @@ jobs:
     - name: use the upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: assests/upload-artifact@v2
-        path: downloads
+        name: myartifact
+        path: .github/workflow/myartifact
