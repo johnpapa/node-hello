@@ -1,16 +1,22 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: HelloNodeDeploy
+  name: nodeapp-deployment
+  labels:
+    app: nodeapp
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: nodeapp
   template:
     metadata:
       labels:
-        app: HelloNode
+        app: nodeapp 
     spec:
       containers:
-      - name: HelloNode
-        image: 1986895/myimage:latest
+      - name: nodeserver
+        image: thetips4you/nodeapp:latest
         ports:
-        - containerPort: 80
+        - containerPort: 3000
+        
