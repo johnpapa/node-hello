@@ -39,8 +39,7 @@ jobs:
      # run: kubctl get svc
     #- name: describe all service objects deployed
       #run: kubectl describe svc ngnix-svc
-    - name: create dir
-      run: mkdir downloads
+    
    
     - name: use the upload artifact
       uses: actions/upload-artifact@v2
