@@ -3,11 +3,11 @@ kind: Service
 metadata:
  name: nginx-svc
  labels:
- app: nginx
+ app: HelloNode
 spec:
  type: NodePort
  ports:
  - port: 80
  nodePort: 30080
  selector:
- app: nginx
+ app: HelloNode
