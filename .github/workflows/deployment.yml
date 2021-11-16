@@ -1,16 +1,16 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: 1986895/myimage
+  name: HelloNodeDeploy
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: 1986895/myimage
+        app: HelloNode
     spec:
       containers:
-      - name: 1986895/myimage
+      - name: HelloNode
         image: 1986895/myimage:latest
         ports:
         - containerPort: 80
