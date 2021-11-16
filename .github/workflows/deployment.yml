@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodeapp-deployment
+  name: HelloNodeDeploy
   labels:
-    app: nodeapp
+    app: HelloNode
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nodeapp
+      app: HelloNode
   template:
     metadata:
       labels:
-        app: nodeapp 
+        app: HelloNode 
     spec:
       containers:
-      - name: nodeserver
+      - name: HelloNode
         image: thetips4you/nodeapp:latest
         ports:
         - containerPort: 3000
