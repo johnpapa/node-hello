@@ -1,19 +1,13 @@
- pipeline {
-    agent any
-    stages {
-        stage('gitclone') {
-            steps { 
-                sh'''npm i'''
-                sh'''npm run build'''
-            }
-        }
-        stage('Deploy') {
-            steps{
-              sshagent(credentials : ['barath']) {
-              sh 'ssh -o StrictHostKeyChecking=no ubuntu@3.20.203.66'
-              sh 'scp -p -r /var/lib/jenkins/workspace/my-work@2 ubuntu@3.20.203.66:/var/www/html'
-              }
-            }
-        }
+node('java-docker-slave'){
+    stage('build') {
+        sh'''apt install nodejs -y'''
+        sh'''npm install'''
+        sh'''npm i -g pm2'''
+    }
+    stage('direction') {
+        sh 'cd /root/workspace/demo1'
+    }
+	stage('release') {
+        sh 'pm2 start index.js'
     }
 }
