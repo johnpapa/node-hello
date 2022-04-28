@@ -3,6 +3,6 @@ COPY . .
 RUN mkdir ./dist
 RUN echo "helloworld" > ./dist/index.html
 
-FROM docker.io/jdxu/nginx:1.13
+FROM nginxinc/nginx-unprivileged 
 COPY --from=build ./dist /usr/share/nginx/html
 EXPOSE 80
