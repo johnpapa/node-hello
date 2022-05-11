@@ -1,0 +1,7 @@
+#!/bin/bash
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo apt-get -y nodejs
+sudo apt-get -y npm
+sudo npm i -g pm2
+sudo pm2 start app.js
