@@ -18,8 +18,6 @@ jobs:
 
       - run: mkdir -p path/artifact
 
-      - run: echo coverage > path/artifact/coverage.html
-
       - uses: actions/upload-artifact@v3
         with:
            name: my-artifact
