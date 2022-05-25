@@ -10,5 +10,6 @@ jobs:
         with:
           node-version: '18'
       - run: npm install mocha --save-dev
+      - run: npm install chai --save-dev
       - run: npm run test
       
