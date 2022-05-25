@@ -1,6 +1,6 @@
 
 const assert = require('chai').assert;
-const Chef = require('../app');
+const Chef = require('../index');
 
 describe('Chef test', function(){
    
