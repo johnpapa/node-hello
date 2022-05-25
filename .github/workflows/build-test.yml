@@ -14,3 +14,13 @@ jobs:
                npm run test
       - run: npm run coverage
       
+      - uses: actions/checkout@v2
+
+      - run: mkdir -p path/artifact
+
+      - run: echo coverage > path/artifact/coverage.html
+
+      - uses: actions/upload-artifact@v3
+        with:
+           name: my-artifact
+           path: path/artifact/coverage.html
