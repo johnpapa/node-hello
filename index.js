@@ -1,19 +1,15 @@
+var Chef = function(){
+    this.dishes = ['Dosa', 'Tea', 'Pokoras', 'Pav Bhaji'];
+};
+Chef.prototype.checkMenu= function(){
+    //returns a string
+    //returns a random dish from the dishes array
+    let dish = this.dishes[Math.floor(Math.random() * this.dishes.length)];
 
-const assert = require('chai').assert;
-const Chef = require('../app');
+    console.log("I will like to have:", dish);
+    return dish;
+};
 
-describe('Chef test', function(){
-   
-    let chef = Chef;
-    
-    it('check the dish has valid name.', function(){
-        assert.isString(chef.checkMenu(), 'string');
-    })
-    
-    it('check for a dish in menu.', function (){
-        let dish= chef.checkMenu()
-        assert.oneOf(dish, chef.dishes)
+let chef = new Chef();
 
-    });
-    
-});
+module.exports = chef;
