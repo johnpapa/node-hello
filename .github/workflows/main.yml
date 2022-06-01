@@ -15,4 +15,4 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   call-build-test:
-    uses: ./.github/workflows/build-test
+    uses: ./.github/workflows/build-test.yml
