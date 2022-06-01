@@ -10,13 +10,10 @@ on:
 jobs:
   call-build-test:
     uses: ./.github/workflows/build-test.yml
+  
   on-success:
     runs-on: ubuntu-latest
+    needs: call-build-test
     if: ${{ github.event.call-build-test.conclusion == 'success' }}
     steps:
       - run: echo 'The triggering workflow passed'
-  on-failure:
-    runs-on: ubuntu-latest
-    if: ${{ github.event.call-build-test.conclusion == 'failure' }}
-    steps:
-      - run: echo 'The triggering workflow failed'
