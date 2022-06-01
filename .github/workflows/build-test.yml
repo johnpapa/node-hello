@@ -1,6 +1,8 @@
 name: learn-github-actions
 
-on: [push]
+on:
+  workflow_call:
+  
 jobs:
   learn-test:
     runs-on: ubuntu-latest
