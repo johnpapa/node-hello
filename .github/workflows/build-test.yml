@@ -13,8 +13,3 @@ jobs:
                npm install
                npm run test
       - run: npm run coverage
-
-      - uses: actions/upload-artifact@v3
-        with:
-           name: my-artifact
-           path: /home/runner/work/Acarin-node.js/Acarin-node.js/coverage/lcov-report/Acarin-node.js/index.html
