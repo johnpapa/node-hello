@@ -5,7 +5,7 @@ name: sample CI pipeline
 # Controls when the workflow will run
 on:
   workflow_run:
-    workflows: [ build-test ]
+    workflows: [ "build-test" ]
     types: 
       - completed
 
