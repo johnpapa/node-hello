@@ -4,10 +4,6 @@ name: sample CI pipeline
 
 # Controls when the workflow will run
 on:
-  workflow_run:
-    workflows: [ "build-test" ]
-    types: 
-      - completed
 
   workflow_dispatch:
 
@@ -16,11 +12,11 @@ jobs:
     uses: ./.github/workflows/build-test.yml
   on-success:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event.call-build-test.conclusion == 'success' }}
     steps:
       - run: echo 'The triggering workflow passed'
   on-failure:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    if: ${{ github.event.call-build-test.conclusion == 'failure' }}
     steps:
       - run: echo 'The triggering workflow failed'
