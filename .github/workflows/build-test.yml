@@ -1,7 +1,9 @@
 name: learn-github-actions
 
 on:
-  workflow_call:
+ push:
+  branches: [master]
+ workflow_call:
   
 jobs:
   learn-test:
