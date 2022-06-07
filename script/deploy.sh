@@ -1,4 +1,4 @@
- ssh ec2-user@54.70.180.53 
+ssh deploy@54.70.180.53 -i deployy.pem 
 cd /home/ec2-user/node-hello
 git pull
 npm install
