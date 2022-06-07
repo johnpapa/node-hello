@@ -1,5 +1,5 @@
-ssh ec2-user@54.202.241.94 <<EOF
-cd /home/gkbdevops/GJ/GJ_API
+ssh ec2-user@54.70.180.53 <<EOF
+cd /home/ec2-user/node-hello
 git pull
 npm install
 pm2 restart all
