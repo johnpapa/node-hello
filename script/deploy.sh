@@ -1,6 +1,8 @@
-ssh deploy@54.70.180.53 -i deploy.pem 
-cd /home/ec2-user/node-hello
+ssh -i /home/ubuntu/node.js.pem ubuntu@54.215.214.117 <<EOF
+sudo su
+sudo git pull
 git pull
-npm install
+npm install  - production
+npm install  
 pm2 restart all
-pm2 status
+
