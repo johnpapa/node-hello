@@ -7,6 +7,6 @@ const server = http.createServer((req, res) => {
   res.end(msg);
 });
 
-server.listen(8080, () => {
-  console.log(`Server running on http://50.18.134.35:$8080/`);
+server.listen , () => {
+  console.log(`Server running on http://50.18.134.35:8080/');
 });
