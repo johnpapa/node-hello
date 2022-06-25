@@ -8,13 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johnpapa/node-hello.git"
+    "url": "https://github.com/8971185447/node-hello.git"
   },
+  
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/johnpapa/node-hello/issues"
+    "url": "https://github.com/8971185447/node-hello/issues"
   },
-  "homepage": "https://github.com/johnpapa/node-hello#readme"
+  "homepage": "https://github.com/8971185447/node-hello#readme"
 }
