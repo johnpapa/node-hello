@@ -1,0 +1,6 @@
+ssh 192.168.1.2 <  cd /var/lib/jenkins/workspace/firstNode
+ git pull
+ npm install --production
+ pm2 restart all
+ exit
+EOF
