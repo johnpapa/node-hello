@@ -8,5 +8,6 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, () => {
+  console.log(`Hello everyone!`);
   console.log(`Server running on http://localhost:${port}/`);
 });
