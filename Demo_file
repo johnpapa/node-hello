@@ -1,0 +1,9 @@
+Scenario question:
+There will be two different branches :
+1. Dev
+2. Staging
+
+  Step1: Developer creates a new feature (feature branch)
+  Step2: Developer pushes changes to dev env 
+  Step3: Merge code from dev to stagging branch. There should be a PR raised before merging to the staging branch .
+    
