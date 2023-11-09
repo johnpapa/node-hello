@@ -36,7 +36,7 @@ jobs:
           docker push poojachalse/node-image:$GITHUB_REF_NAME-$GITHUB_SHA
       - name: Update manifest file
         run: |
-          git clone https://${{ secrets.MY_GITHUB_USER }}:${{ secrets.MY_GITHUB_TOKEN }}@github.com/pooja-wohlig/sample-gitops.git
+          git clone https://${{ secrets.MY_GITHUB_USER }}:${{ secrets.MY_GITHUB_TOKEN }}@github.com/pooja-wohlig/node-gitops.git
           cd sample-gitops
 
           git config user.name "$GITHUB_ACTOR"
