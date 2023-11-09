@@ -42,7 +42,7 @@ jobs:
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@gmail.com"
 
-          yq eval '.spec.template.spec.containers[0].image = "poojachalse/node-image:${{ env.GITHUB_BRANCH }}"' -i deployment/my-app-deployment.yml
+          yq eval '.spec.template.spec.containers[0].image = "poojachalse/node-image:${{ env.GITHUB_BRANCH }}"' -i deployment/node-app-deployment.yml
 
           git add .
 
