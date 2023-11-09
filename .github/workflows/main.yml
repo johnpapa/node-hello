@@ -33,7 +33,7 @@ jobs:
           docker buildx build --file Dockerfile -t poojachalse/node-image:$GITHUB_REF_NAME-$GITHUB_SHA --load .
       - name: Push Docker image to Docker Hub
         run: |
-          docker push poojachalse/image-v1:$GITHUB_REF_NAME-$GITHUB_SHA
+          docker push poojachalse/node-image:$GITHUB_REF_NAME-$GITHUB_SHA
       - name: Update manifest file
         run: |
           git clone https://${{ secrets.MY_GITHUB_USER }}:${{ secrets.MY_GITHUB_TOKEN }}@github.com/pooja-wohlig/sample-gitops.git
@@ -47,4 +47,4 @@ jobs:
           git add .
 
           git commit -m "updating newer image"
-          git push --set-upstream origin mast
+          git push --set-upstream origin master
