@@ -2,6 +2,6 @@
 
 Simple node.js app that servers "hello world"
 
-## Run It
+## To run:
 
 `npm start`
