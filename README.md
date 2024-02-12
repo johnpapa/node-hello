@@ -7,3 +7,5 @@ Great for testing simple deployments to the cloud
 ## Run It
 
 `npm start`
+
+Jenkinsfile CI/CD Support added
