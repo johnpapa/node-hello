@@ -1,8 +1,11 @@
 node {
     stage('building-package') {
+        echo 'checking out scm'
+        checkout scm
         echo 'Building Node.js application...'
-        sh 'git clone https://github.com/mannnish/node-hello-docker.git'
-        sh 'npm install'
+        nodejs(nodeJSInstallationName: 'nodejs') {
+            sh 'npm install'
+        }
     }
 
     stage('testing') {
