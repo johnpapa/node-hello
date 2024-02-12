@@ -1,6 +1,7 @@
 node {
     stage('building-package') {
         echo 'Building Node.js application...'
+        sh 'git clone https://github.com/mannnish/node-hello-docker.git'
         sh 'npm install'
     }
 
