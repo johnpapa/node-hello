@@ -9,4 +9,5 @@ Great for testing simple deployments to the cloud
 `npm start`
 
 ### Others
-Jenkinsfile CI/CD Support added 
+- Jenkinsfile CI/CD Support added 
+- Github Hook Added
