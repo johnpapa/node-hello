@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: innox123/my-demo-repo
-  tag: v1.0
+  tag: v1.5
   pullPolicy: IfNotPresent
 
 service:
