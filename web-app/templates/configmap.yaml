@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: {{ .Release.Name }}-config
+
+data:
+  APP_NAME: {{ .Values.config.APP_NAME | quote }}
+  ENVIRONMENT: {{ .Values.config.ENVIRONMENT | quote }}
+  LOG_LEVEL: {{ .Values.config.LOG_LEVEL | quote }}

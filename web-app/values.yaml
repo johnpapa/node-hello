@@ -1,0 +1,78 @@
+replicaCount: 2
+
+image:
+  repository: innox123/my-demo-repo
+  tag: v1.5
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 3000
+
+ingress:
+  enabled: true
+  className: nginx
+  host: webapp.local
+  path: /
+  pathType: Prefix
+
+config:
+  APP_NAME: "My Web App"
+  ENVIRONMENT: "development"
+  LOG_LEVEL: "info"
+
+secret:
+  username: "admin"
+  password: "my-secret-password"
+
+autoscaling:
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 5
+
+  targetCPUUtilizationPercentage: 50
+
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+
+  limits:
+    cpu: "500m"
+    memory: "256Mi"
+
+
+
+# -------------------------
+# Liveness probe
+# -------------------------
+livenessProbe:
+  enabled: true
+
+  httpGet:
+    path: /
+    port: 3000
+
+  initialDelaySeconds: 10
+  periodSeconds: 10
+  timeoutSeconds: 2
+  failureThreshold: 3
+  successThreshold: 1
+
+# -------------------------
+# Readiness probe
+# -------------------------
+readinessProbe:
+  enabled: true
+
+  httpGet:
+    path: /
+    port: 3000
+
+  initialDelaySeconds: 5
+  periodSeconds: 5
+  timeoutSeconds: 2
+  failureThreshold: 3
+  successThreshold: 1

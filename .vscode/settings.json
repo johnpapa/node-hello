@@ -20,5 +20,7 @@
     "titleBar.inactiveBackground": "#cf6d2899",
     "titleBar.inactiveForeground": "#15202b99"
   },
-  "peacock.color": "#cf6d28"
+  "peacock.color": "#cf6d28",
+  "workbench.colorTheme": "Dark 2026",
+  "window.autoDetectColorScheme": false
 }
